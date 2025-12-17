@@ -1,7 +1,8 @@
 <script setup lang='ts'>
 import { ref } from "vue";
 import { Icon } from "@iconify/vue";
-const activeTab = ref("vue");
+import Figure from "./views/Figure.vue";
+const activeTab = ref("figure");
 const clickTab = (name: string) => {
   activeTab.value = name;
 };
@@ -13,13 +14,13 @@ const clickTab = (name: string) => {
         <section>
           <VTabGroupOutline>
             <VTabsWrapperOutline TabOutlineCenter>
-              <VTabOutline title="Vue" :isActive="activeTab === 'vue'" @onClick="clickTab('vue')">
+              <VTabOutline title="Nhân vật" :isActive="activeTab === 'figure'" @onClick="clickTab('figure')">
                 <template #icon>
                   <Icon icon="logos:vue" :class="{ 'text-green-500': activeTab === 'vue' }"
                         class="text-xl font-medium w-6 h-6 mr-2" />
                 </template>
               </VTabOutline>
-              <VTabOutline title="Vueuse" :isActive="activeTab === 'vueuse'" @onClick="clickTab('vueuse')">
+              <VTabOutline title="vueuse" :isActive="activeTab === 'vueuse'" @onClick="clickTab('vueuse')">
                 <template #icon>
                   <Icon icon="logos:vueuse" :class="{ 'text-green-500': activeTab === 'vueuse' }"
                         class="text-xl font-medium w-6 h-6 mr-2" />
@@ -38,47 +39,42 @@ const clickTab = (name: string) => {
                 </template>
               </VTabOutline>
             </VTabsWrapperOutline>
-            <VTabsContentOutline>
-              <div v-if="activeTab === 'vue'">
-                Vue is a framework. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error assumenda, maiores
-                recusandae sunt neque ab officia consectetur officiis nesciunt sapiente adipisci. Sapiente, exercitationem
-                impedit. Eum fuga amet commodi, voluptatibus ab expedita aliquam ipsa minima sit! Voluptatum eveniet
-                provident fuga velit suscipit cupiditate sed laboriosam libero corrupti id cum, nesciunt tenetur alias
-                ullam itaque minima reiciendis maiores! Fuga omnis voluptate nam quasi adipisci iste consequatur facilis,
-                officia exercitationem libero accusamus saepe, id ratione alias quos? Eaque eum, cum deserunt corporis
-                ipsa, modi fuga incidunt reiciendis recusandae delectus illo a nobis dolorum repellendus aspernatur
-                nesciunt eligendi, dicta consectetur labore obcaecati? Debitis, velit.
-              </div>
-              <div v-if="activeTab === 'vueuse'">
-                VueUse is a collection of utility functions based on Composition API. Lorem ipsum dolor sit, amet
-                consectetur adipisicing elit. Aliquam ad provident optio hic error odio dolorum nisi neque, nemo amet quam
-                a repellat itaque! Esse eveniet repellat fugit soluta, commodi molestiae iure? Maxime beatae, illum enim
-                perferendis nobis quae architecto corporis itaque recusandae eaque minus! Quisquam eaque ratione ex aut
-                voluptas id ullam est rerum cumque, obcaecati qui sunt perferendis reprehenderit quia illo ut architecto
-                esse minus ipsum excepturi iste nulla maiores recusandae? Voluptas nemo necessitatibus neque pariatur
-                iusto saepe natus quod corporis. Deleniti voluptate sunt aliquam veniam quisquam, inventore numquam
-                quidem! Qui, modi cupiditate? Dignissimos eveniet expedita accusamus itaque!
-              </div>
-              <div v-if="activeTab === 'nuxt'">
-                Nuxt is a free and open-source framework with an intuitive and extendable way to create type-safe,
-                performant and production-grade full-stack web applications and websites with Vue.js. Lorem ipsum, dolor
-                sit amet consectetur adipisicing elit. Quia quasi earum doloribus asperiores suscipit exercitationem
-                cupiditate eligendi, esse sit optio itaque illum nesciunt nemo eius repudiandae sapiente dolor dolores
-                veniam! Aspernatur sint non ad in laborum consectetur quas eligendi molestias voluptates blanditiis
-                eveniet illum soluta voluptate pariatur nihil magnam dolorum perspiciatis id beatae recusandae enim,
-                obcaecati placeat! Tenetur consequatur, ipsa porro ab in veritatis placeat officiis! Et minima repudiandae
-                vel? Vero ad nam asperiores pariatur rem consequatur. Asperiores nihil ducimus impedit, exercitationem,
-                autem vero, beatae tenet.
-              </div>
-              <div v-if="activeTab === 'gridsome'">
-                Gridsome is a Vue.js powered Jamstack framework for building static generated websites & apps that are
-                fast by default 🚀. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio ducimus illum deleniti
-                sint nobis alias sit velit. Ipsa voluptas at harum debitis. Commodi quo cupiditate voluptate, quos aperiam
-                accusantium, minima consequatur id odio asperiores quas saepe nulla quisquam inventore, reiciendis
-                eligendi dolores voluptas delectus ea autem ut nam corrupti consequuntur possimus! Veritatis, accusamus!
-                Veniam, incidunt ad. Illo, voluptate voluptatem corrupti tenetur dolore alias rem ut maxime amet porro est
-                explicabo nostrum consectetur non ex odit, in, illum atque deserunt expedita fugiat praesentium sunt. Quo
-                reiciendis sequi error laboriosam voluptatem. Nemo aliquam autem delectus incidunt, vitae itaque.
+            <VTabsContentOutline class="bg-gray-500">
+              <div class="min-h-screen">
+                <div v-if="activeTab === 'figure'">
+                  <Figure/>
+                </div>
+                <div v-if="activeTab === 'vueuse'">
+                  VueUse is a collection of utility functions based on Composition API. Lorem ipsum dolor sit, amet
+                  consectetur adipisicing elit. Aliquam ad provident optio hic error odio dolorum nisi neque, nemo amet quam
+                  a repellat itaque! Esse eveniet repellat fugit soluta, commodi molestiae iure? Maxime beatae, illum enim
+                  perferendis nobis quae architecto corporis itaque recusandae eaque minus! Quisquam eaque ratione ex aut
+                  voluptas id ullam est rerum cumque, obcaecati qui sunt perferendis reprehenderit quia illo ut architecto
+                  esse minus ipsum excepturi iste nulla maiores recusandae? Voluptas nemo necessitatibus neque pariatur
+                  iusto saepe natus quod corporis. Deleniti voluptate sunt aliquam veniam quisquam, inventore numquam
+                  quidem! Qui, modi cupiditate? Dignissimos eveniet expedita accusamus itaque!
+                </div>
+                <div v-if="activeTab === 'nuxt'">
+                  Nuxt is a free and open-source framework with an intuitive and extendable way to create type-safe,
+                  performant and production-grade full-stack web applications and websites with Vue.js. Lorem ipsum, dolor
+                  sit amet consectetur adipisicing elit. Quia quasi earum doloribus asperiores suscipit exercitationem
+                  cupiditate eligendi, esse sit optio itaque illum nesciunt nemo eius repudiandae sapiente dolor dolores
+                  veniam! Aspernatur sint non ad in laborum consectetur quas eligendi molestias voluptates blanditiis
+                  eveniet illum soluta voluptate pariatur nihil magnam dolorum perspiciatis id beatae recusandae enim,
+                  obcaecati placeat! Tenetur consequatur, ipsa porro ab in veritatis placeat officiis! Et minima repudiandae
+                  vel? Vero ad nam asperiores pariatur rem consequatur. Asperiores nihil ducimus impedit, exercitationem,
+                  autem vero, beatae tenet.
+                </div>
+                <div v-if="activeTab === 'gridsome'">
+                  Gridsome is a Vue.js powered Jamstack framework for building static generated websites & apps that are
+                  fast by default 🚀. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio ducimus illum deleniti
+                  sint nobis alias sit velit. Ipsa voluptas at harum debitis. Commodi quo cupiditate voluptate, quos aperiam
+                  accusantium, minima consequatur id odio asperiores quas saepe nulla quisquam inventore, reiciendis
+                  eligendi dolores voluptas delectus ea autem ut nam corrupti consequuntur possimus! Veritatis, accusamus!
+                  Veniam, incidunt ad. Illo, voluptate voluptatem corrupti tenetur dolore alias rem ut maxime amet porro est
+                  explicabo nostrum consectetur non ex odit, in, illum atque deserunt expedita fugiat praesentium sunt. Quo
+                  reiciendis sequi error laboriosam voluptatem. Nemo aliquam autem delectus incidunt, vitae itaque.
+                </div>
               </div>
             </VTabsContentOutline>
           </VTabGroupOutline>
