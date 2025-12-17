@@ -34,7 +34,7 @@ import FigureBoxItems from "../components/FigureBoxItems.vue";
 import type {BagItem} from "../interface/BagItem.interface.ts";
 
 const player_name = ref("");
-const player_bag_items = ref([]);
+const player_bag_items = ref<BagItem[]>([]);
 
 
 const searchPlayer = async () => {

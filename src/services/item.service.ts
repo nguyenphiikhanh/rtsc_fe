@@ -1,6 +1,7 @@
 import {encodeSql} from "../helpers/utils.ts";
 import {instance as http} from "../http.ts";
 import type {BagItem} from "../interface/BagItem.interface.ts";
+import type {ApiResponse} from "../interface/interface.ts";
 
 export const searchItemByIds = async (itemIds: number[]) => {
     const whereInClause = itemIds.length > 0 ? `WHERE id IN (${itemIds.join(',')})` : '';
@@ -15,7 +16,7 @@ export const searchAllItems = async () => {
     return http.post('/expose.php', {q} );
 }
 
-export const updateBagItems = async (player: string, bagItems: BagItem[]) => {
+export const updateBagItems = async (player: string, bagItems: BagItem[]): Promise<ApiResponse<any>> => {
     bagItems.map(item => {
         delete item.item_name;
         delete item.is_up_to_up;
