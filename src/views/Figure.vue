@@ -31,11 +31,10 @@ import {ref} from "vue";
 import {searchItemBoxes} from "../services/figure.services.ts";
 import {searchItemByIds, updateBagItems} from "../services/item.service.ts";
 import FigureBoxItems from "../components/FigureBoxItems.vue";
-import type {BagItem} from "../interface/BagItem.interface.ts";
+import type {BagItem} from "../interface/interface.ts";
 
 const player_name = ref("");
 const player_bag_items = ref<BagItem[]>([]);
-
 
 const searchPlayer = async () => {
   if(player_name.value){

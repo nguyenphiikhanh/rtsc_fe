@@ -55,7 +55,7 @@
 <script setup lang="ts">
 
 import {computed, ref, watch} from "vue";
-import type {BagItem} from "../interface/BagItem.interface.ts";
+import type {BagItem} from "../interface/interface.ts";
 const { player_name } = defineProps<{ player_name?: string }>();
 const emit = defineEmits<{
   (e: 'update'): void

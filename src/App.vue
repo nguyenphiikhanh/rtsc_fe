@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import { Icon } from "@iconify/vue";
 import Figure from "./views/Figure.vue";
+import Account from "./views/Account.vue";
 const activeTab = ref("figure");
 const clickTab = (name: string) => {
   activeTab.value = name;
@@ -20,7 +21,7 @@ const clickTab = (name: string) => {
                         class="text-xl font-medium w-6 h-6 mr-2" />
                 </template>
               </VTabOutline>
-              <VTabOutline title="vueuse" :isActive="activeTab === 'vueuse'" @onClick="clickTab('vueuse')">
+              <VTabOutline title="Account" :isActive="activeTab === 'account'" @onClick="clickTab('account')">
                 <template #icon>
                   <Icon icon="logos:vueuse" :class="{ 'text-green-500': activeTab === 'vueuse' }"
                         class="text-xl font-medium w-6 h-6 mr-2" />
@@ -44,15 +45,8 @@ const clickTab = (name: string) => {
                 <div v-if="activeTab === 'figure'">
                   <Figure/>
                 </div>
-                <div v-if="activeTab === 'vueuse'">
-                  VueUse is a collection of utility functions based on Composition API. Lorem ipsum dolor sit, amet
-                  consectetur adipisicing elit. Aliquam ad provident optio hic error odio dolorum nisi neque, nemo amet quam
-                  a repellat itaque! Esse eveniet repellat fugit soluta, commodi molestiae iure? Maxime beatae, illum enim
-                  perferendis nobis quae architecto corporis itaque recusandae eaque minus! Quisquam eaque ratione ex aut
-                  voluptas id ullam est rerum cumque, obcaecati qui sunt perferendis reprehenderit quia illo ut architecto
-                  esse minus ipsum excepturi iste nulla maiores recusandae? Voluptas nemo necessitatibus neque pariatur
-                  iusto saepe natus quod corporis. Deleniti voluptate sunt aliquam veniam quisquam, inventore numquam
-                  quidem! Qui, modi cupiditate? Dignissimos eveniet expedita accusamus itaque!
+                <div v-if="activeTab === 'account'">
+                  <Account/>
                 </div>
                 <div v-if="activeTab === 'nuxt'">
                   Nuxt is a free and open-source framework with an intuitive and extendable way to create type-safe,

@@ -1,6 +1,6 @@
 import {encodeSql} from "../helpers/utils.ts";
 import {instance as http} from "../http.ts";
-import type {BagItem} from "../interface/BagItem.interface.ts";
+import type {BagItem} from "../interface/interface.ts";
 import type {ApiResponse} from "../interface/interface.ts";
 
 export const searchItemByIds = async (itemIds: number[]) => {
