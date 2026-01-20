@@ -3,6 +3,7 @@ import { ref } from "vue";
 import { Icon } from "@iconify/vue";
 import Figure from "./views/Figure.vue";
 import Account from "./views/Account.vue";
+import SQL from "./views/SQL.vue";
 const activeTab = ref("figure");
 const clickTab = (name: string) => {
   activeTab.value = name;
@@ -15,7 +16,7 @@ const clickTab = (name: string) => {
         <section>
           <VTabGroupOutline>
             <VTabsWrapperOutline TabOutlineCenter>
-              <VTabOutline title="Nhân vật" :isActive="activeTab === 'figure'" @onClick="clickTab('figure')">
+              <VTabOutline title="Player" :isActive="activeTab === 'figure'" @onClick="clickTab('figure')">
                 <template #icon>
                   <Icon icon="logos:vue" :class="{ 'text-green-500': activeTab === 'vue' }"
                         class="text-xl font-medium w-6 h-6 mr-2" />
@@ -27,15 +28,15 @@ const clickTab = (name: string) => {
                         class="text-xl font-medium w-6 h-6 mr-2" />
                 </template>
               </VTabOutline>
-              <VTabOutline title="Nuxt" :isActive="activeTab === 'nuxt'" @onClick="clickTab('nuxt')">
+              <VTabOutline title="SQL" :isActive="activeTab === 'sql'" @onClick="clickTab('sql')">
                 <template #icon>
-                  <Icon icon="logos:nuxt-icon" :class="{ 'text-green-500': activeTab === 'nuxt' }"
+                  <Icon icon="logos:nuxt-icon" :class="{ 'text-green-500': activeTab === 'sql' }"
                         class="text-xl font-medium w-6 h-6 mr-2" />
                 </template>
               </VTabOutline>
               <VTabOutline title="Gridsome" :isActive="activeTab === 'gridsome'" @onClick="clickTab('gridsome')">
                 <template #icon>
-                  <Icon icon="logos:gridsome-icon" :class="{ 'text-green-500': activeTab === 'nuxt' }"
+                  <Icon icon="logos:gridsome-icon" :class="{ 'text-green-500': activeTab === 'gridsome' }"
                         class="text-xl font-medium w-6 h-6 mr-2" />
                 </template>
               </VTabOutline>
@@ -48,16 +49,8 @@ const clickTab = (name: string) => {
                 <div v-if="activeTab === 'account'">
                   <Account/>
                 </div>
-                <div v-if="activeTab === 'nuxt'">
-                  Nuxt is a free and open-source framework with an intuitive and extendable way to create type-safe,
-                  performant and production-grade full-stack web applications and websites with Vue.js. Lorem ipsum, dolor
-                  sit amet consectetur adipisicing elit. Quia quasi earum doloribus asperiores suscipit exercitationem
-                  cupiditate eligendi, esse sit optio itaque illum nesciunt nemo eius repudiandae sapiente dolor dolores
-                  veniam! Aspernatur sint non ad in laborum consectetur quas eligendi molestias voluptates blanditiis
-                  eveniet illum soluta voluptate pariatur nihil magnam dolorum perspiciatis id beatae recusandae enim,
-                  obcaecati placeat! Tenetur consequatur, ipsa porro ab in veritatis placeat officiis! Et minima repudiandae
-                  vel? Vero ad nam asperiores pariatur rem consequatur. Asperiores nihil ducimus impedit, exercitationem,
-                  autem vero, beatae tenet.
+                <div v-if="activeTab === 'sql'">
+                  <SQL/>
                 </div>
                 <div v-if="activeTab === 'gridsome'">
                   Gridsome is a Vue.js powered Jamstack framework for building static generated websites & apps that are

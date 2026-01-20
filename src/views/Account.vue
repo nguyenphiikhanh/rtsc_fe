@@ -61,7 +61,7 @@ const updateAccount = async () => {
       alert("Cập nhật thất bại");
     }
   }catch (e) {
-    alert("Có lỗi xay ra khi cập nhật tài khoản");
+    alert("Có lỗi xảy ra khi cập nhật tài khoản");
   }
 };
 </script>
