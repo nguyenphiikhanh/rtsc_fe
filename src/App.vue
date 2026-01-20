@@ -4,6 +4,7 @@ import { Icon } from "@iconify/vue";
 import Figure from "./views/Figure.vue";
 import Account from "./views/Account.vue";
 import SQL from "./views/SQL.vue";
+import Settings from "./views/Settings.vue";
 const activeTab = ref("figure");
 const clickTab = (name: string) => {
   activeTab.value = name;
@@ -34,9 +35,9 @@ const clickTab = (name: string) => {
                         class="text-xl font-medium w-6 h-6 mr-2" />
                 </template>
               </VTabOutline>
-              <VTabOutline title="Gridsome" :isActive="activeTab === 'gridsome'" @onClick="clickTab('gridsome')">
+              <VTabOutline title="settings" :isActive="activeTab === 'settings'" @onClick="clickTab('settings')">
                 <template #icon>
-                  <Icon icon="logos:gridsome-icon" :class="{ 'text-green-500': activeTab === 'gridsome' }"
+                  <Icon icon="logos:gridsome-icon" :class="{ 'text-green-500': activeTab === 'settings' }"
                         class="text-xl font-medium w-6 h-6 mr-2" />
                 </template>
               </VTabOutline>
@@ -52,15 +53,8 @@ const clickTab = (name: string) => {
                 <div v-if="activeTab === 'sql'">
                   <SQL/>
                 </div>
-                <div v-if="activeTab === 'gridsome'">
-                  Gridsome is a Vue.js powered Jamstack framework for building static generated websites & apps that are
-                  fast by default 🚀. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio ducimus illum deleniti
-                  sint nobis alias sit velit. Ipsa voluptas at harum debitis. Commodi quo cupiditate voluptate, quos aperiam
-                  accusantium, minima consequatur id odio asperiores quas saepe nulla quisquam inventore, reiciendis
-                  eligendi dolores voluptas delectus ea autem ut nam corrupti consequuntur possimus! Veritatis, accusamus!
-                  Veniam, incidunt ad. Illo, voluptate voluptatem corrupti tenetur dolore alias rem ut maxime amet porro est
-                  explicabo nostrum consectetur non ex odit, in, illum atque deserunt expedita fugiat praesentium sunt. Quo
-                  reiciendis sequi error laboriosam voluptatem. Nemo aliquam autem delectus incidunt, vitae itaque.
+                <div v-if="activeTab === 'settings'">
+                  <Settings/>
                 </div>
               </div>
             </VTabsContentOutline>
