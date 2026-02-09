@@ -83,7 +83,7 @@ const setEndpoint = async () => {
 
 onMounted(async () => {
   const domains = await endpointStore.fetchUrl();
-  domains.map(item => {
+  domains.map((item:{domain: string}) => {
     const protocolIncluded = item.domain.includes('://')
         ? item.domain
         : `https://${item.domain}`;

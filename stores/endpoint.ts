@@ -2,7 +2,9 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import {getEndpoints} from "../src/services/endpoint.service.ts";
-
+type Domains = {
+    domain: string;
+}
 export const useEndpointStore = defineStore('endpoint', () => {
         // 1. State: Giá trị mặc định
         const baseUrl = ref(import.meta.env.VITE_API_BASE_URL);
@@ -19,7 +21,7 @@ export const useEndpointStore = defineStore('endpoint', () => {
 
         const fetchUrl = async () => {
             const res = await getEndpoints();
-            return res.data as string[];
+            return res.data as Domains[];
         }
 
         // 3. Return các state và action ra ngoài
