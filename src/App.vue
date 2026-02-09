@@ -5,6 +5,7 @@ import Figure from "./views/Figure.vue";
 import Account from "./views/Account.vue";
 import SQL from "./views/SQL.vue";
 import Settings from "./views/Settings.vue";
+import ShopeeSetting from "./views/ShopeeSetting.vue";
 const activeTab = ref("figure");
 const clickTab = (name: string) => {
   activeTab.value = name;
@@ -41,6 +42,12 @@ const clickTab = (name: string) => {
                         class="text-xl font-medium w-6 h-6 mr-2" />
                 </template>
               </VTabOutline>
+              <VTabOutline title="Shopee" :isActive="activeTab === 'shopify'" @onClick="clickTab('shopify')">
+                <template #icon>
+                  <Icon icon="logos:shopify" :class="{ 'text-green-500': activeTab === 'shopify' }"
+                        class="text-xl font-medium w-6 h-6 mr-2" />
+                </template>
+              </VTabOutline>
             </VTabsWrapperOutline>
             <VTabsContentOutline class="bg-gray-500">
               <div class="min-h-screen">
@@ -55,6 +62,9 @@ const clickTab = (name: string) => {
                 </div>
                 <div v-if="activeTab === 'settings'">
                   <Settings/>
+                </div>
+                <div v-if="activeTab === 'shopify'">
+                  <ShopeeSetting/>
                 </div>
               </div>
             </VTabsContentOutline>
